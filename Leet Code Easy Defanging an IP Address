@@ -1,0 +1,7 @@
+class Solution:
+    def defangIPaddr(self, address: str) -> str:
+        #arr = list(address)
+        #print(arr)
+        #address.replace(".","[.]")
+        
+        return address.replace(".","[.]")
