@@ -1,0 +1,13 @@
+class Solution:
+    def numJewelsInStones(self, J: str, S: str) -> int:
+        jewel = sorted(list(J))
+        stone = sorted(list(S))
+        #print (jewel)
+        count = 0
+        for i in range(len (stone)):
+            for j in range(len(jewel)):
+                if stone[i] == jewel[j]:
+                    count = count + 1
+        return count
+        
+        
