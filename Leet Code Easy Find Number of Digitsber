@@ -1,0 +1,12 @@
+class Solution:
+    def findNumbers(self, nums: List[int]) -> int:
+        even = 0
+        for i in nums:
+            Count = 0
+            while(i > 0):
+                i = i // 10
+                Count = Count + 1
+            if Count%2 == 0:
+                even = even +1
+    
+        return even
