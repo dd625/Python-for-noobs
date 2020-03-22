@@ -1,0 +1,51 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the repeatedString function below.
+# hypothesis 1 - create a list of size greater than n and then count the number of 'a's in it - seems like it will need more space in the system
+#hypothesis 2 - do it more mathematically. Simple case - string is abba n = 4, number of a is 2 - gonna try this one
+def repeatedString(s, n):
+    string_size = len(s)
+    print (string_size)
+    
+    count_direct = int(n/string_size) 
+    count_indirect = n%string_size
+    
+    
+    count = count_direct*s.count('a') + counting_function(count_indirect,s)
+
+    return count
+
+
+
+
+
+def counting_function(count_indirect,s):
+    arr_string = list(s)
+    arr_variable=[]
+    for i in range(count_indirect):
+        arr_variable.append(s[i])
+    
+    count_indirect = arr_variable.count('a')
+
+    return count_indirect
+
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    n = int(input())
+
+    result = repeatedString(s, n)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
